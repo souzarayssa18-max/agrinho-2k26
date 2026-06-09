@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Agro Tech - Agrinho</title>
+    <style>
+        /* CSS para deixar o jogo bonito e responsivo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe, #dcfce7);
+            color: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quiz-container {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #15803d;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p.subtitulo {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .pergunta {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo dos botões de opções */
+        .btn-opcao {
+            background-color: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            color: #334155;
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-opcao:hover {
+            background-color: #bbf7d0;
+            border-color: #4ade80;
+            color: #166534;
+            transform: translateY(-2px);
+        }
+
+        /* Caixa de resultado oculta no início */
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .acertou {
+            background-color: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .errou {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>🌾 Desafio Agro Tech 🚀</h1>
+        <p class="subtitulo">Educação Digital - Programa Agrinho</p>
+        
+        <div class="pergunta">
+            Qual das tecnologias abaixo ajuda o agricultor a economizar água monitorando a umidade da terra?
+        </div>
+
+        <button class="btn-opcao" onclick="verificarResposta(false)">A) Trator movido a diesel comum</button>
+        <button class="btn-opcao" onclick="verificarResposta(true)">B) Sensores IoT conectados à internet</button>
+        <button class="btn-opcao" onclick="verificarResposta(false)">C) Irrigação ligada o dia todo em horários fixos</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function verificarResposta(correta) {
+            const caixaResultado = document.getElementById('resultado');
+            caixaResultado.style.display = 'block';
+
+            if (correta) {
+                caixaResultado.className = 'acertou';
+                caixaResultado.innerHTML = '🎉 Resposta Correta! Os sensores IoT evitam o desperdício enviando dados em tempo real para o celular do produtor!';
+            } else {
+                caixaResultado.className = 'errou';
+                caixaResultado.innerHTML = '❌ Tente novamente! Essa opção não é a mais eficiente para economizar água de forma inteligente.';
+            }
+        }
+    </script>
+
+</body>
+</html>
